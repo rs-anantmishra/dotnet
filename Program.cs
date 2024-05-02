@@ -4,8 +4,19 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine("Anant Mishra");
+            int result = 0;
+            int n = 7;
+
+            result = Fib.StdFib(n);
+            Console.WriteLine(result);
+
+            Dictionary<int, int> d = new Dictionary<int, int>();
+
+            result = Fib.MemoFib(n, d);
+            Console.WriteLine(result);
+
         }
+
+
     }
 }
