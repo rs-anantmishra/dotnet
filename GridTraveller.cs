@@ -52,7 +52,7 @@ namespace Algorithms
                 MemoGridTraveller(new Grid { Rows = grid.Rows - 1, Cols = grid.Cols }, memo) +
                 MemoGridTraveller(new Grid { Rows = grid.Rows, Cols = grid.Cols - 1 }, memo)
                 );
-            //isResolved = memo.TryGetValue(grid, out int result);
+
             Int64 result = memo.Where(x => (x.Key.Rows == grid.Rows && x.Key.Cols == grid.Cols)).FirstOrDefault().Value;
 
             return result;
