@@ -25,7 +25,7 @@ namespace Algorithms
             }
 
             d.Add(n, MemoFib(n - 2, d) + MemoFib(n - 1, d));
-            bool isResolved = d.TryGetValue(n, out int memo);
+            bool _ = d.TryGetValue(n, out int memo);
 
             return memo;
         }
