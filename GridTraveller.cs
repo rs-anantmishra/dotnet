@@ -30,13 +30,16 @@ namespace Algorithms
             if (grid.Rows == 0 || grid.Cols == 0) { return 0; }
             if (grid.Rows == 1 || grid.Cols == 1) { return 1; }
 
+
+            /* Compiler Optimized Code - having this enabled has no impact.
+             * 
             bool isResolved = false;
             bool isKeyFound = false;
 
             IList<Grid> lstGridKeys = memo.Keys.ToList();
-            foreach(var gridKey in lstGridKeys) 
-            { 
-                if(gridKey.Rows == grid.Rows && gridKey.Cols == grid.Cols)
+            foreach (var gridKey in lstGridKeys)
+            {
+                if (gridKey.Rows == grid.Rows && gridKey.Cols == grid.Cols)
                 { isKeyFound = true; break; }
             }
 
@@ -46,6 +49,12 @@ namespace Algorithms
                 Int64 value = memo.Where(x => (x.Key.Rows == grid.Rows && x.Key.Cols == grid.Cols)).FirstOrDefault().Value;
                 return value;
             }
+            *
+            */
+
+            Int64 value = memo.Where(x => (x.Key.Rows == grid.Rows && x.Key.Cols == grid.Cols)).FirstOrDefault().Value;
+            if(value > 0)
+                return value;
 
             //Update memo
             memo.Add(grid,
